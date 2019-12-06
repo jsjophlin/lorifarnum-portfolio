@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -11,6 +15,14 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: "gatsby-source-storyblok",
+      options: {
+        accessToken: process.env.GATSBY_STORYBLOK_ACCESS_TOKEN,
+        homeSlug: "home",
+        version: "draft",
       },
     },
     `gatsby-transformer-sharp`,
