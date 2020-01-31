@@ -6,7 +6,7 @@ const Page = ({ blok }) => {
 
   return (
     <>
-      {core_page &&
+      {blok.core_page &&
         React.createElement(Components(core_page.component), {
           key: blok._uid,
           blok: core_page,

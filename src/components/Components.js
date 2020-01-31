@@ -1,5 +1,5 @@
-import About from "./about"
 import Feature from "./feature"
+import GeneralPage from "./general_page"
 import Grid from "./grid"
 import Home from "./home"
 import Image from "./image"
@@ -9,8 +9,8 @@ import Teaser from "./teaser"
 import ComponentNotFound from "./component_not_found"
 
 const ComponentList = {
-  about: About,
   feature: Feature,
+  general_page: GeneralPage,
   grid: Grid,
   home: Home,
   project_image: Image,

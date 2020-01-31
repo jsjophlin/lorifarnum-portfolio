@@ -21,6 +21,7 @@ exports.createPages = ({ graphql, actions }) => {
               edges {
                 node {
                   uuid
+                  field_component
                   full_slug
                 }
               }
@@ -34,17 +35,32 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         const entries = result.data.allStoryblokEntry.edges
-        entries.forEach((entry, index) => {
-          let pagePath =
-            entry.node.full_slug == "home" ? "" : `${entry.node.full_slug}/`
 
-          createPage({
-            path: `/${pagePath}`,
-            component: storyblokEntry,
-            context: {
-              uuid: entry.node.uuid,
-            },
-          })
+        function getSlug(node) {
+          const { field_component, full_slug } = node
+
+          if (field_component === "project") {
+            return `/${full_slug}`
+          } else if (field_component === "page") {
+            return full_slug === "home" ? "/" : `/${full_slug}`
+          } else {
+            return null
+          }
+        }
+
+        entries.forEach(({ node }) => {
+          let pagePath = getSlug(node)
+
+          // If we have a matched slug
+          if (pagePath) {
+            createPage({
+              path: pagePath,
+              component: storyblokEntry,
+              context: {
+                uuid: node.uuid,
+              },
+            })
+          }
         })
       })
     )
