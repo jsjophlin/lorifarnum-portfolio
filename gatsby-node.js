@@ -49,7 +49,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         entries.forEach(({ node }) => {
-          let pagePath = getSlug(node)
+          const pagePath = getSlug(node)
 
           // If we have a matched slug
           if (pagePath) {

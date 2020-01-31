@@ -2,11 +2,11 @@ import React from "react"
 import Components from "./components.js"
 
 const Page = ({ blok }) => {
-  const core_page = blok.core_page[0]
+  const core_page = blok.core_page ? blok.core_page[0] : null
 
   return (
     <>
-      {blok.core_page &&
+      {core_page &&
         React.createElement(Components(core_page.component), {
           key: blok._uid,
           blok: core_page,

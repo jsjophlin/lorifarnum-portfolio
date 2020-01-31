@@ -3,38 +3,31 @@ import SbEditable from "storyblok-react"
 import Components from "./components.js"
 import useProjects from "./staticQueries/projects"
 
-const getProjects = (projects, allProjects) => {
-  let results = []
-
-  projects.forEach(project => {
-    allProjects.forEach(({ node }) => {
-      if (node.uuid === project) {
-        results.push(node)
-      }
-    })
-  })
-
-  return results
-}
-
 const Home = ({ blok, seo }) => {
   const projects = useProjects()
-  const matches = getProjects(blok.projects, projects)
 
   return (
     <SbEditable content={blok}>
-      {matches.map((match, index) => {
-        const node = JSON.parse(match.content)
+      {projects ? (
+        <section>
+          {projects.map(({ node }) => {
+            const { name, slug, uuid } = node
+            const content = JSON.parse(node.content)
 
-        return (
-          <div key={index} className="home">
-            {React.createElement(Components(node.component), {
-              key: node._uid,
-              blok: node,
-            })}
-          </div>
-        )
-      })}
+            return (
+              <article key={uuid} className="project">
+                {React.createElement(Components(content.component), {
+                  key: content._uid,
+                  blok: content,
+                  isTeaser: true,
+                })}
+              </article>
+            )
+          })}
+        </section>
+      ) : (
+        <div>No projects available to list.</div>
+      )}
     </SbEditable>
   )
 }
