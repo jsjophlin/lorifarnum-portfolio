@@ -1,16 +1,8 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
-import "./layout.css"
+import Helmet from "react-helmet"
+import "../styles/global.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -18,29 +10,42 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          description
         }
       }
     }
   `)
 
+  const { title, description } = data
+
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+      <Helmet>
+        <html lang="en" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Helmet>
+      <header>
+        <figure>
+          <span>Logo</span>
+        </figure>
+        <ul>
+          <li>Print</li>
+          <li>Web</li>
+          <li>Logos</li>
+          <li>About</li>
+        </ul>
+      </header>
+      <main>{children}</main>
+      <footer>
+        <ul className="inner">
+          <li>Dribble</li>
+          <li>Instagram</li>
+          <li>Facebook</li>
+          <li>lori@lorifarnum.com</li>
+        </ul>
+        <div>All Content © Lori Farnum</div>
+      </footer>
     </>
   )
 }
