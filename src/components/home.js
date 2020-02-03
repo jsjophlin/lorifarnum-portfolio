@@ -6,6 +6,7 @@ import Components from "./components.js"
 import Layout from "./layout"
 import useProjects from "./staticQueries/projects"
 import Masonry from "masonry-layout"
+import "../styles/masonry.css"
 
 const Home = ({ blok, seo }) => {
   const projects = useProjects()

@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+
+main,
+nav,
+footer {
+  @apply mx-3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+li,
+a,
+button,
+span {
+  @apply font-sans;
+}
+
+h1,
+.h1 {
+  @apply text-4xl leading-tight mb-4;
+}
+h2,
+.h2 {
+  @apply text-3xl leading-tight mb-3;
+}
+h3,
+.h3 {
+  @apply text-2xl leading-tight font-light mb-3;
+}
+h4,
+.h4 {
+  @apply text-xl leading-tight font-light mb-3;
+}
+h5,
+.h5 {
+  @apply text-lg leading-tight mb-2;
+}
+h6,
+.h6 {
+  @apply text-base leading-tight mb-2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-heading;
+}
+
+blockquote,
+p,
+td,
+th,
+li,
+button {
+  @apply leading-tight;
+}
+
+blockquote,
+p,
+li {
+  @apply leading-normal;
+}
+
+blockquote,
+h4,
+p,
+li,
+td,
+th,
+label {
+  @apply text-body;
+}
+
+blockquote,
+p {
+  @apply mb-4;
+}
+
+li {
+  @apply mb-2;
+}
+
+a {
+  @apply text-blue-100;
+}
+
+@media (--breakpoint-sm) {
+  h1,
+  .h1 {
+    @apply text-7xl;
+  }
+  h2,
+  .h2 {
+    @apply text-4xl;
+  }
+  h3,
+  .h3 {
+    @apply text-3xl;
+  }
+  h4,
+  .h4 {
+    @apply text-2xl;
+  }
+  h5,
+  .h5 {
+    @apply text-xl;
+  }
+  h6,
+  .h6 {
+    @apply text-lg;
+  }
+  blockquote,
+  p,
+  td,
+  th,
+  li,
+  button {
+    @apply text-base;
+  }
+}
+
+@media (--breakpoint-md) {
+  h1,
+  .h1 {
+    @apply text-8xl;
+  }
+  h2,
+  .h2 {
+    @apply text-5xl;
+  }
+}
+
+@media (--breakpoint-lg) {
+  h2,
+  .h2 {
+    @apply text-6xl;
+  }
+  blockquote,
+  p,
+  th,
+  td,
+  li,
+  button {
+    @apply text-lg;
+  }
+}

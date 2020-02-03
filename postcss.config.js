@@ -14,5 +14,6 @@ module.exports = {
         "custom-media-queries": true,
       },
     }),
+    require("tailwindcss"),
   ],
 }

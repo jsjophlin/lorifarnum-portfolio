@@ -1,15 +1,8 @@
 .logo {
-  width: 4rem;
+  @apply w-16;
   height: auto;
 }
 
 .menu {
-  margin: 0;
-}
-
-@custom-media --med (width <= 50rem);
-@media (--med) {
-  nav {
-    display: none;
-  }
+  @apply m-0;
 }

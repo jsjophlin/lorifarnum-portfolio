@@ -1,51 +1,5 @@
-* {
-  box-sizing: border-box;
-}
+@import "tailwindcss/base";
 
-main,
-nav,
-footer {
-  margin-left: 10px;
-  margin-right: 10px;
-}
+@import "tailwindcss/components";
 
-/* Masonry grid styling */
-.grid {
-  margin: 0 auto;
-}
-.grid:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.grid-item {
-  width: 400px;
-  height: calc(400px * 1.5472);
-  margin-bottom: 10px;
-  float: left;
-  overflow: hidden;
-}
-.dimensions-454x840,
-.dimensions-454x840 img {
-  /* Aspect ratio: 1.8502 */
-  width: 400px;
-  height: calc(400px * 1.8502);
-}
-.dimensions-548x410,
-.dimensions-548x410 img {
-  /* Aspect ratio: .7482 */
-  width: 400px;
-  height: calc(400px * 0.7482);
-}
-.dimensions-360x410,
-.dimensions-360x410 img {
-  /* Aspect ratio: 1.1389 */
-  width: 400px;
-  height: calc(400px * 1.1389);
-}
-.dimensions-265x410,
-.dimensions-265x410 img {
-  /* Aspect ratio: 1.5472 */
-  width: 400px;
-  height: calc(400px * 1.5472);
-}
+@import "tailwindcss/utilities";

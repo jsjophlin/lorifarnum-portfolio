@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Helmet from "react-helmet"
 import Nav from "../components/nav"
-import "../styles/global.css"
+import "../styles/theme.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -32,10 +32,18 @@ const Layout = ({ children }) => {
       <main>{children}</main>
       <footer>
         <ul className="inner">
-          <li>Dribble</li>
-          <li>Instagram</li>
-          <li>Facebook</li>
-          <li>lori@lorifarnum.com</li>
+          <li>
+            <a href="https://www.dribble.com">Dribble</a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com">Instagram</a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com">Facebook</a>
+          </li>
+          <li>
+            <a href="mailto:lori@lorifarnum.com">lori@lorifarnum.com</a>
+          </li>
         </ul>
         <div>All Content © Lori Farnum</div>
       </footer>

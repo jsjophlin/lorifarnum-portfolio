@@ -29,6 +29,13 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
     {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true, // Print removed selectors and processed file names
+        tailwind: true, // Enable tailwindcss support
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `lori-farnum-portfolio`,
