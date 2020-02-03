@@ -3,6 +3,7 @@ import GeneralPage from "./general_page"
 import Grid from "./grid"
 import Home from "./home"
 import Image from "./image"
+import Logo from "./logo"
 import Page from "./page"
 import Project from "./project"
 import Teaser from "./teaser"
@@ -13,7 +14,8 @@ const ComponentList = {
   general_page: GeneralPage,
   grid: Grid,
   home: Home,
-  project_image: Image,
+  image: Image,
+  logo: Logo,
   page: Page,
   project: Project,
   teaser: Teaser,

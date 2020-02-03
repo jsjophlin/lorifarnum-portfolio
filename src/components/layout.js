@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Helmet from "react-helmet"
+import Nav from "../components/nav"
 import "../styles/global.css"
 
 const Layout = ({ children }) => {
@@ -26,15 +27,7 @@ const Layout = ({ children }) => {
         <meta name="description" content={description} />
       </Helmet>
       <header>
-        <figure>
-          <span>Logo</span>
-        </figure>
-        <ul>
-          <li>Print</li>
-          <li>Web</li>
-          <li>Logos</li>
-          <li>About</li>
-        </ul>
+        <Nav />
       </header>
       <main>{children}</main>
       <footer>
