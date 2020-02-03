@@ -6,3 +6,10 @@
 .menu {
   margin: 0;
 }
+
+@custom-media --med (width <= 50rem);
+@media (--med) {
+  nav {
+    display: none;
+  }
+}

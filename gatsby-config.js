@@ -27,11 +27,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `lori-farnum-portfolio`,
+        short_name: `lori-farnum`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
