@@ -1,0 +1,8 @@
+.logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+}
+.logos figure {
+  max-width: calc(100% - 40px);
+}
