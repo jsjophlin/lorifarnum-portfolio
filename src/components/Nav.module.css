@@ -1,0 +1,8 @@
+.logo {
+  @apply w-16;
+  height: auto;
+}
+
+.menu {
+  @apply m-0;
+}
