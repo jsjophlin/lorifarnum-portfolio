@@ -8159,6 +8159,11 @@ normalize.css@^8.0.1:
   resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
   integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
 
+now@^17.0.1:
+  version "17.0.1"
+  resolved "https://registry.yarnpkg.com/now/-/now-17.0.1.tgz#690df55367c3ed2d59938d13ffdadf7f0cb2ce9b"
+  integrity sha512-oDrfYT7FDYj+H5W6tHhtPYUN9vTRGVFOwewZNb9Cx6/Gsi1D+IwF8zCZOQ8g0Rb4Y8Mm7uDlDYNZunTSS5nH7w==
+
 npm-bundled@^1.0.1:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/npm-bundled/-/npm-bundled-1.0.6.tgz#e7ba9aadcef962bb61248f91721cd932b3fe6bdd"
