@@ -1,29 +1,29 @@
-import feature from "./Feature"
-import generalPage from "./GeneralPage"
-import grid from "./Grid"
-import home from "./Home"
-import image from "./Image"
-import logo from "./Logo"
-import page from "./Page"
-import project from "./Project"
-import teaser from "./Teaser"
-import componentNotFound from "./ComponentNotFound"
+import Feature from "./Feature"
+import GeneralPage from "./GeneralPage"
+import Grid from "./Grid"
+import Home from "./Home"
+import Image from "./Image"
+import Logo from "./Logo"
+import Page from "./Page"
+import Project from "./Project"
+import Teaser from "./Teaser"
+import ComponentNotFound from "./ComponentNotFound"
 
 const ComponentList = {
-  feature: feature,
-  general_page: generalPage,
-  grid: grid,
-  home: home,
-  image: image,
-  logo: logo,
-  page: page,
-  project: project,
-  teaser: teaser,
+  feature: Feature,
+  general_page: GeneralPage,
+  grid: Grid,
+  home: Home,
+  image: Image,
+  logo: Logo,
+  page: Page,
+  project: Project,
+  teaser: Teaser,
 }
 
 const Components = type => {
   if (typeof ComponentList[type] === "undefined") {
-    return componentNotFound
+    return ComponentNotFound
   }
   return ComponentList[type]
 }
