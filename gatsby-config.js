@@ -34,6 +34,7 @@ module.exports = {
         printRejected: true, // Print removed selectors and processed file names
         tailwind: true, // Enable tailwindcss support
       },
+      purgeOnly: ["/src/styles/global.css"], // Purge only Tailwinds css
     },
     {
       resolve: `gatsby-plugin-manifest`,
