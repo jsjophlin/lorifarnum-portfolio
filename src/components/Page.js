@@ -1,5 +1,5 @@
 import React from "react"
-import Components from "./components.js"
+import Components from "./Components.js"
 
 const Page = ({ blok }) => {
   const core_page = blok.core_page ? blok.core_page[0] : null

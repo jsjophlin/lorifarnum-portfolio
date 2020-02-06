@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import SbEditable from "storyblok-react"
-import Components from "./components.js"
+import Components from "./Components.js"
 
 const Project = ({ blok, isTeaser, slug }) => {
   const { description, image, name } = blok
