@@ -1,7 +1,7 @@
 {
   "build": {
     "env": {
-      "GATSBY_STORYBLOK_ACCESS_TOKEN": "@D6ae819Hb1PrYMSC0kzjMAtt"
+      "D6ae819Hb1PrYMSC0kzjMAtt": "@GATSBY_STORYBLOK_ACCESS_TOKEN"
     }
   }
 }
