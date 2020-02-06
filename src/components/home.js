@@ -9,18 +9,18 @@ import Masonry from "masonry-layout"
 import "../styles/masonry.css"
 
 const Home = ({ blok, seo }) => {
-  const projects = useProjects()
-  const masonryRef = useRef()
+  // const projects = useProjects()
+  // const masonryRef = useRef()
 
-  useEffect(() => {
-    // Initialize masonry
-    const masonry = new Masonry(masonryRef.current, {
-      itemSelector: ".grid-item",
-      columnWidth: 400,
-      gutter: 10,
-      stagger: 30,
-    })
-  })
+  // useEffect(() => {
+  //   // Initialize masonry
+  //   const masonry = new Masonry(masonryRef.current, {
+  //     itemSelector: ".grid-item",
+  //     columnWidth: 400,
+  //     gutter: 10,
+  //     stagger: 30,
+  //   })
+  // })
 
   return (
     <SbEditable content={blok}>
@@ -28,7 +28,8 @@ const Home = ({ blok, seo }) => {
         <body className="home" />
       </Helmet>
       <Layout>
-        {projects ? (
+        <div>home</div>
+        {/* {projects ? (
           <div ref={masonryRef} className="grid">
             {projects.map(({ node }) => {
               const { slug, uuid } = node
@@ -55,7 +56,7 @@ const Home = ({ blok, seo }) => {
           </div>
         ) : (
           <div>No projects available to list.</div>
-        )}
+        )} */}
       </Layout>
     </SbEditable>
   )
