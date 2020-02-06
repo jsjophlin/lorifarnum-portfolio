@@ -1,6 +1,6 @@
 import React from "react"
 import cn from "classnames"
-import Layout from "../../components/layout"
+import Layout from "../../components/Layout"
 import SEO from "../../components/Seo"
 import useLogos from "../../components/staticQueries/logos"
 import styles from "./index.module.css"
