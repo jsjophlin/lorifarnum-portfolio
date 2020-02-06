@@ -1,7 +1,7 @@
 import React from "react"
 import cn from "classnames"
 import Layout from "../../components/layout"
-import SEO from "../../components/seo"
+import SEO from "../../components/Seo"
 import useLogos from "../../components/staticQueries/logos"
 import styles from "./index.module.css"
 

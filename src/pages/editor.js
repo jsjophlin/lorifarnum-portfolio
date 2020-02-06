@@ -1,5 +1,5 @@
 import React from "react"
-import Components from "../components/components.js"
+import Components from "../components/Components.js"
 import SbEditable from "storyblok-react"
 import config from "../../gatsby-config"
 

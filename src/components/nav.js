@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import logo from "../../static/img/logo.svg"
-import styles from "./nav.module.css"
+import styles from "./Nav.module.css"
 
 const Nav = props => {
   const handleClickPrint = e => {

@@ -1,13 +1,13 @@
-import feature from "./feature"
-import generalPage from "./general_page"
-import grid from "./grid"
-import home from "./home"
-import image from "./image"
-import logo from "./logo"
-import page from "./page"
-import project from "./project"
-import teaser from "./teaser"
-import componentNotFound from "./component_not_found"
+import feature from "./Feature"
+import generalPage from "./GeneralPage"
+import grid from "./Grid"
+import home from "./Home"
+import image from "./Image"
+import logo from "./Logo"
+import page from "./Page"
+import project from "./Project"
+import teaser from "./Teaser"
+import componentNotFound from "./ComponentNotFound"
 
 const ComponentList = {
   feature: feature,

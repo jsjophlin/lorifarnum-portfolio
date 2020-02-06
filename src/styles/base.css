@@ -92,7 +92,7 @@ li {
 }
 
 a {
-  @apply text-blue-100;
+  @apply text-body;
 }
 
 @media (--breakpoint-sm) {

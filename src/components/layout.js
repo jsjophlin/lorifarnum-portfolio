@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Helmet from "react-helmet"
-import Nav from "../components/nav"
+import Nav from "./Nav"
 import "../styles/theme.css"
 
 const Layout = ({ children }) => {
