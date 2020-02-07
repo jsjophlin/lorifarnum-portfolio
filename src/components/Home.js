@@ -5,12 +5,14 @@ import Helmet from "react-helmet"
 import Gallery from "react-photo-gallery"
 import Components from "./Components.js"
 import Layout from "./Layout"
+import LinkedImage from "./LinkedImage"
 import useProjects from "./staticQueries/projects"
 import "../styles/masonry.css"
 
 const Home = ({ blok, seo }) => {
   const projects = useProjects()
   const photos = []
+  const links = []
 
   projects.forEach(({ node }) => {
     const { name, slug, uuid } = node
@@ -27,11 +29,23 @@ const Home = ({ blok, seo }) => {
       width: width,
       height: height,
     })
+    links.push({
+      slug: slug,
+    })
   })
 
-  const handleClick = e => {
-    console.log(e.currentTarget)
-  }
+  const imageRenderer = ({ index, left, top, key, photo }) => (
+    <LinkedImage
+      key={key}
+      direction="column"
+      margin={"2px"}
+      index={index}
+      slug={links[index]}
+      photo={photo}
+      left={left}
+      top={top}
+    />
+  )
 
   return (
     <SbEditable content={blok}>
@@ -39,35 +53,11 @@ const Home = ({ blok, seo }) => {
         <body className="home" />
       </Helmet>
       <Layout>
-        <Gallery photos={photos} direction={"column"} onClick={handleClick} />
-        {/* {projects ? (
-          <div className="grid">
-            {projects.map(({ node }) => {
-              const { slug, uuid } = node
-              const content = JSON.parse(node.content)
-              const { dimensions } = content
-
-              return (
-                <div
-                  key={uuid}
-                  className={cn(
-                    `dimensions-${dimensions}`,
-                    "project grid-item"
-                  )}
-                >
-                  {React.createElement(Components(content.component), {
-                    key: content._uid,
-                    blok: content,
-                    isTeaser: true,
-                    slug: slug,
-                  })}
-                </div>
-              )
-            })}
-          </div>
-        ) : (
-          <div>No projects available to list.</div>
-        )} */}
+        <Gallery
+          photos={photos}
+          direction={"column"}
+          renderImage={imageRenderer}
+        />
       </Layout>
     </SbEditable>
   )
