@@ -1,3 +1,9 @@
+.nav {
+  & a:hover span {
+    @apply text-blue-300;
+  }
+}
+
 .menu li {
   @apply mb-0;
 
@@ -28,4 +34,5 @@
 
 .logo_text {
   margin-bottom: 0 !important;
+  transition: color var(--timing-sm) linear;
 }

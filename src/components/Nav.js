@@ -14,7 +14,7 @@ const Nav = props => {
   }
 
   return (
-    <nav className="flex justify-between items-end my-8">
+    <nav className={cn(styles.nav, "flex justify-between items-end my-8")}>
       <figure>
         <Link to={"/"} className="flex items-end">
           <img className="w-16 h-auto" src={logo} alt="Lori Farnum logo" />
@@ -36,7 +36,7 @@ const Nav = props => {
           <li className="mr-8">
             <Link to="/logos">Logos</Link>
           </li>
-          <li>
+          <li className="mr-4">
             <Link to="/about">About</Link>
           </li>
         </ul>

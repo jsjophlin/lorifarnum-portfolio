@@ -3,6 +3,7 @@ import SbEditable from "storyblok-react"
 import Helmet from "react-helmet"
 import Gallery from "react-photo-gallery"
 import Layout from "./Layout"
+import Nav from "./Nav"
 import LinkedImage from "./LinkedImage"
 import useProjects from "./staticQueries/projects"
 import "../styles/masonry.css"
@@ -50,6 +51,9 @@ const Home = ({ blok, seo }) => {
       <Helmet>
         <body className="home" />
       </Helmet>
+      <header>
+        <Nav />
+      </header>
       <Layout>
         <Gallery
           photos={photos}

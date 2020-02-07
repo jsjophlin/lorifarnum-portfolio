@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Helmet from "react-helmet"
-import Nav from "./Nav"
 import "../styles/theme.css"
 
 const Layout = ({ children }) => {
@@ -26,9 +25,6 @@ const Layout = ({ children }) => {
         <title>{title}</title>
         <meta name="description" content={description} />
       </Helmet>
-      <header>
-        <Nav />
-      </header>
       <main>{children}</main>
       <footer className="flex justify-between">
         <ul className="flex">
