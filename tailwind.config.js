@@ -50,8 +50,9 @@ module.exports = {
         white: "#ececec",
         actualWhite: "#ffffff",
         black: "#090b16",
-        body: "#707070",
+        body: "#9B9D9E",
         heading: "#080525",
+        brandBlue: "#156896",
         twitterBlue: "#5cabff",
       },
       fontFamily: {

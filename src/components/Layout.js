@@ -30,18 +30,18 @@ const Layout = ({ children }) => {
         <Nav />
       </header>
       <main>{children}</main>
-      <footer>
-        <ul className="inner">
-          <li>
+      <footer className="flex justify-between">
+        <ul className="flex">
+          <li className="mr-4">
             <a href="https://www.dribble.com">Dribble</a>
           </li>
-          <li>
+          <li className="mr-4">
             <a href="https://www.instagram.com">Instagram</a>
           </li>
-          <li>
+          <li className="mr-4">
             <a href="https://www.facebook.com">Facebook</a>
           </li>
-          <li>
+          <li className="mr-4">
             <a href="mailto:lori@lorifarnum.com">lori@lorifarnum.com</a>
           </li>
         </ul>

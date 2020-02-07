@@ -1,9 +1,7 @@
 import React from "react"
 import SbEditable from "storyblok-react"
-import cn from "classnames"
 import Helmet from "react-helmet"
 import Gallery from "react-photo-gallery"
-import Components from "./Components.js"
 import Layout from "./Layout"
 import LinkedImage from "./LinkedImage"
 import useProjects from "./staticQueries/projects"
@@ -38,7 +36,7 @@ const Home = ({ blok, seo }) => {
     <LinkedImage
       key={key}
       direction="column"
-      margin={"2px"}
+      margin={"0"}
       index={index}
       slug={links[index]}
       photo={photo}

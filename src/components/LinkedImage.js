@@ -1,10 +1,8 @@
 import React from "react"
+import cn from "classnames"
 import { Link } from "gatsby"
 
-const cont = {
-  overflow: "hidden",
-  position: "relative",
-}
+const cont = {}
 
 const imgStyle = {
   transition: "transform .135s cubic-bezier(0.0,0.0,0.2,1),opacity linear .15s",
@@ -12,14 +10,16 @@ const imgStyle = {
 
 const LinkedImage = ({ index, photo, margin, direction, top, left, slug }) => {
   if (direction === "column") {
-    cont.position = "absolute"
     cont.left = left
     cont.top = top
   }
 
   return (
     <figure
-      className="image"
+      className={cn(
+        "overflow-hidden",
+        direction === "column" ? "absolute" : "relative"
+      )}
       style={{ margin, height: photo.height, width: photo.width, ...cont }}
     >
       <Link to={`/projects/${slug.slug}`}>
