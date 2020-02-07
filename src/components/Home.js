@@ -13,17 +13,13 @@ const Home = ({ blok, seo }) => {
   const masonryRef = useRef()
 
   useEffect(() => {
-    let masonry
-
-    // Initialize masonry if not on web server
-    if (typeof window !== "undefined") {
-      masonry = new Masonry(masonryRef.current, {
-        itemSelector: ".grid-item",
-        columnWidth: 400,
-        gutter: 10,
-        stagger: 30,
-      })
-    }
+    // Initialize masonry
+    const masonry = new Masonry(masonryRef.current, {
+      itemSelector: ".grid-item",
+      columnWidth: 400,
+      gutter: 10,
+      stagger: 30,
+    })
   })
 
   return (
