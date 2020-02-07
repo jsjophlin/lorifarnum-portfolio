@@ -1,26 +1,14 @@
-import React, { useEffect, useRef } from "react"
+import React from "react"
 import SbEditable from "storyblok-react"
 import cn from "classnames"
 import Helmet from "react-helmet"
 import Components from "./Components.js"
 import Layout from "./Layout"
 import useProjects from "./staticQueries/projects"
-import Masonry from "masonry-layout"
 import "../styles/masonry.css"
 
 const Home = ({ blok, seo }) => {
   const projects = useProjects()
-  const masonryRef = useRef()
-
-  useEffect(() => {
-    // Initialize masonry
-    const masonry = new Masonry(masonryRef.current, {
-      itemSelector: ".grid-item",
-      columnWidth: 400,
-      gutter: 10,
-      stagger: 30,
-    })
-  })
 
   return (
     <SbEditable content={blok}>
@@ -29,7 +17,7 @@ const Home = ({ blok, seo }) => {
       </Helmet>
       <Layout>
         {projects ? (
-          <div ref={masonryRef} className="grid">
+          <div className="grid">
             {projects.map(({ node }) => {
               const { slug, uuid } = node
               const content = JSON.parse(node.content)

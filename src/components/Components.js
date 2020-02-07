@@ -1,31 +1,25 @@
-import Feature from "./Feature"
-import GeneralPage from "./GeneralPage"
-import Grid from "./Grid"
-import Home from "./Home"
-import Image from "./Image"
-import Logo from "./Logo"
-import Page from "./Page"
-import Project from "./Project"
-import Teaser from "./Teaser"
-import ComponentNotFound from "./ComponentNotFound"
+import loadable from "@loadable/component"
 
 const ComponentList = {
-  feature: Feature,
-  general_page: GeneralPage,
-  grid: Grid,
-  home: Home,
-  image: Image,
-  logo: Logo,
-  page: Page,
-  project: Project,
-  teaser: Teaser,
+  feature: "Feature",
+  general_page: "GeneralPage",
+  grid: "Grid",
+  home: "Home",
+  image: "Image",
+  logo: "Logo",
+  page: "Page",
+  project: "Project",
+  teaser: "Teaser",
 }
 
 const Components = type => {
   if (typeof ComponentList[type] === "undefined") {
+    const ComponentNotFound = loadable(() => import("./ComponentNotFound"))
     return ComponentNotFound
+  } else {
+    const Component = loadable(() => import(`./${ComponentList[type]}`))
+    return Component
   }
-  return ComponentList[type]
 }
 
 export default Components
