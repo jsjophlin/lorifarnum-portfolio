@@ -17,6 +17,9 @@ const Home = props => {
   const projectsPrint = useProjectsPrint()
   const projectsWeb = useProjectsWeb()
   const [grid, setGrid] = useState(formatPhotos(projects))
+  // Grab the user's choice from the previous page and save it, then clear local storage
+  const currentImages = localStorage.getItem("lf_currentImages")
+  localStorage.clear()
 
   function formatPhotos(projects) {
     const tempGrid = {
@@ -74,13 +77,18 @@ const Home = props => {
     }
   }
 
+  // If we already have a user choice from a previous page, load it
+  if (currentImages) {
+    updateGrid(currentImages)
+  }
+
   return (
     <SbEditable content={props.blok}>
       <Helmet>
         <body className="home" />
       </Helmet>
       <header>
-        <Nav updateGrid={updateGrid} />
+        <Nav updateGrid={updateGrid} currentPage="home" />
       </header>
       <Layout>
         <Gallery

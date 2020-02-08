@@ -1,4 +1,5 @@
 import React from "react"
+import Helmet from "react-helmet"
 import Layout from "../../components/Layout"
 import SEO from "../../components/Seo"
 import Nav from "../../components/Nav"
@@ -10,7 +11,10 @@ const LogosPage = () => {
 
   return (
     <>
-      <Nav />
+      <Helmet>
+        <body className="logos" />
+      </Helmet>
+      <Nav currentPage="logos" />
       <Layout>
         <SEO title="Logos by Lori Farnum" />
         {logos && (
