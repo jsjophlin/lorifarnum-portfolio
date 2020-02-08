@@ -19,29 +19,28 @@ const Project = ({ blok, isTeaser, slug }) => {
       <Nav currentPage="project" />
       <Layout>
         <div className="relative">
+          <div className={cn(styles.content, "relative z-20")}>
+            <div className={cn(styles.hero_spacer, "float-left h-0")} />
+            <div className="bg-actualWhite py-10">
+              {!isTeaser && (
+                <div className="project-meta">
+                  <h1 className="h3 text-center text-brandBlue">{name}</h1>
+                  {description && <h3>{description}</h3>}
+                </div>
+              )}
+              {primaryImage &&
+                React.createElement(Components(primaryImage.component), {
+                  key: primaryImage._uid,
+                  blok: primaryImage,
+                })}
+            </div>
+            <div className={cn(styles.hero_spacer_clear, "table")} />
+          </div>
           <div className={cn(styles.bg_image, "absolute top-0 w-full z-10")}>
             <Img
               fluid={projectBgImage.childImageSharp.fluid}
               alt="Project background image"
             />
-          </div>
-          <div
-            className={cn(
-              styles.main_content,
-              "bg-actualWhite relative z-20 py-10"
-            )}
-          >
-            {!isTeaser && (
-              <div className="project-meta">
-                <h1 className="h3 text-center text-brandBlue">{name}</h1>
-                {description && <h3>{description}</h3>}
-              </div>
-            )}
-            {primaryImage &&
-              React.createElement(Components(primaryImage.component), {
-                key: primaryImage._uid,
-                blok: primaryImage,
-              })}
           </div>
         </div>
       </Layout>

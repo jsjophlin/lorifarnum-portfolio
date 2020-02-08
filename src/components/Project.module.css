@@ -1,8 +1,16 @@
-.main_content {
-  top: -50%;
-  transform: translateY(25%);
+.content {
+  padding-top: 17%;
 }
 
 .bg_image {
   filter: brightness(75%);
+}
+
+.hero_spacer {
+  width: 1px;
+  margin-left: -1px;
+  padding-top: 90.39%;
+}
+.hero_spacer_clear {
+  clear: both;
 }

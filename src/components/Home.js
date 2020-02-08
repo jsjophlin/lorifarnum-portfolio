@@ -18,8 +18,11 @@ const Home = props => {
   const projectsWeb = useProjectsWeb()
   const [grid, setGrid] = useState(formatPhotos(projects))
   // Grab the user's choice from the previous page and save it, then clear local storage
-  const currentImages = localStorage.getItem("lf_currentImages")
-  localStorage.clear()
+  let currentImages = null
+  if (typeof window !== "undefined") {
+    currentImages = localStorage.getItem("lf_currentImages")
+    localStorage.clear()
+  }
 
   function formatPhotos(projects) {
     const tempGrid = {
