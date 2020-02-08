@@ -1,5 +1,9 @@
 .linked_image {
   &:hover img {
-    transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  & img {
+    transition: transform var(--timing-sm) cubic-bezier(0, 0, 0.2, 1),
+      opacity var(--timing-sm) linear;
   }
 }

@@ -1,6 +1,15 @@
 .nav {
-  & a:hover span {
-    @apply text-blue-300;
+  & img {
+    transition: transform var(--timing-sm) ease-in-out;
+  }
+
+  & a:hover {
+    & img {
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+    & span {
+      @apply text-blue-300;
+    }
   }
 }
 

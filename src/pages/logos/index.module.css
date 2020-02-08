@@ -1,8 +1,11 @@
 .logos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 10px;
+  column-gap: 1rem;
 }
 .logos figure {
   max-width: calc(100% - 40px);
+}
+.logos li {
+  background-color: #f4f4f4;
 }

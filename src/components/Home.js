@@ -8,7 +8,7 @@ import LinkedImage from "./LinkedImage"
 import useProjects from "./staticQueries/projects"
 import "../styles/masonry.css"
 
-const Home = ({ blok, seo }) => {
+const Home = props => {
   const projects = useProjects()
   const photos = []
   const links = []
@@ -47,7 +47,7 @@ const Home = ({ blok, seo }) => {
   )
 
   return (
-    <SbEditable content={blok}>
+    <SbEditable content={props.blok}>
       <Helmet>
         <body className="home" />
       </Helmet>
