@@ -3,7 +3,7 @@
 }
 
 .bg_image {
-  filter: brightness(75%);
+  opacity: 0.8;
 }
 
 .hero_spacer {
