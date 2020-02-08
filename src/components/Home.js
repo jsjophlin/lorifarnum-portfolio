@@ -39,9 +39,12 @@ const Home = props => {
       const re = /.+?(?=x)/
       const width = parseInt(re.exec(dimensions)[0])
       const height = parseInt(dimensions.substr(dimensions.indexOf("x") + 1))
+      const baseUrl = "https://img2.storyblok.com"
+      const urlTail = thumbnail.substr(thumbnail.indexOf(baseUrl) + 18)
+      const modifiedUrl = `${baseUrl}/${width}x${height}/filters:format(webp)${urlTail}`
 
       tempGrid.photos.push({
-        src: thumbnail,
+        src: modifiedUrl,
         width: width,
         height: height,
       })
