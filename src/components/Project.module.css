@@ -1,0 +1,8 @@
+.main_content {
+  top: -50%;
+  transform: translateY(25%);
+}
+
+.bg_image {
+  filter: brightness(75%);
+}

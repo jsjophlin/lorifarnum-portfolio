@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 const Image = ({ blok, slug }) => {
   const image = () => (
     <figure>
-      <img src={blok.image} alt={blok.image_alt} />
+      <img src={blok.image} alt={blok.image_alt} className="mx-auto" />
       {blok.caption && <figcaption>{blok.caption}</figcaption>}
     </figure>
   )
