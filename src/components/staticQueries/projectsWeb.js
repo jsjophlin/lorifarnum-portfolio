@@ -1,11 +1,11 @@
 import { graphql, useStaticQuery } from "gatsby"
 
-const useProjects = () => {
+const useProjectsWeb = () => {
   const { allStoryblokEntry } = useStaticQuery(
     graphql`
-      query PROJECT_QUERY {
+      query PROJECTS_WEB_QUERY {
         allStoryblokEntry(
-          filter: { field_component: { eq: "project" } }
+          filter: { tag_list: { eq: "web" } }
           sort: { fields: first_published_at, order: DESC }
         ) {
           edges {
@@ -24,4 +24,4 @@ const useProjects = () => {
   return allStoryblokEntry.edges
 }
 
-export default useProjects
+export default useProjectsWeb

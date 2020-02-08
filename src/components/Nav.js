@@ -4,13 +4,17 @@ import { Link } from "gatsby"
 import logo from "../../static/img/logo.svg"
 import styles from "./Nav.module.css"
 
-const Nav = props => {
+const Nav = ({ updateGrid }) => {
+  const handleClickAll = e => {
+    updateGrid("all")
+  }
+
   const handleClickPrint = e => {
-    console.log("Print")
+    updateGrid("print")
   }
 
   const handleClickWeb = e => {
-    console.log("Web")
+    updateGrid("web")
   }
 
   return (
@@ -27,6 +31,9 @@ const Nav = props => {
       </figure>
       <div>
         <ul className={cn(styles.menu, "flex justify-end m-0")}>
+          <li className="mr-8">
+            <button onClick={handleClickAll}>All</button>
+          </li>
           <li className="mr-8">
             <button onClick={handleClickPrint}>Print</button>
           </li>
