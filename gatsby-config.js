@@ -42,8 +42,8 @@ module.exports = {
         name: `lori-farnum-portfolio`,
         short_name: `lori-farnum`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#156896`,
+        theme_color: `#156896`,
         display: `minimal-ui`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
