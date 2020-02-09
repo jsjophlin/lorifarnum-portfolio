@@ -5,6 +5,7 @@ import "../styles/lib/slick.min.css"
 import "../styles/lib/slick-theme.min.css"
 import "../styles/carousel.css"
 
+// React Slick carousel: https://react-slick.neostack.com/
 const Carousel = ({ items }) => {
   const settings = {
     autoplay: true,

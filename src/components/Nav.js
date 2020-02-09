@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import cn from "classnames"
 import { Link } from "gatsby"
 import BurgerIcon from "../components/BurgerIcon"
-import logo from "../../static/img/logo.svg"
+import logo from "../images/logo.svg"
 import styles from "./Nav.module.css"
 
 const Nav = ({ updateGrid, currentPage }) => {

@@ -30,6 +30,7 @@ const Home = props => {
       photos: [],
       links: [],
     }
+    // Holding a space at the beginning of the array for the logo carousel
     const dummyPhoto = {
       src: spacer,
       width: 548,
@@ -61,6 +62,7 @@ const Home = props => {
       })
     })
 
+    // Add the dummy objects to the beginning of the array
     tempGrid.photos.unshift(dummyPhoto)
     tempGrid.links.unshift(dummySlug)
 
