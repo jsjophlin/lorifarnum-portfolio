@@ -50,6 +50,7 @@ module.exports = {
         white: "#ececec",
         actualWhite: "#ffffff",
         black: "#090b16",
+        gray: "#f4f4f4",
         body: "#9B9D9E",
         heading: "#080525",
         brandBlue: "#156896",
