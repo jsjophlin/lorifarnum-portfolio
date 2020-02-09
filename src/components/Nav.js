@@ -17,10 +17,13 @@ const Nav = ({ updateGrid, currentPage }) => {
 
   const handleMenuClick = e => {
     const id = e.currentTarget.id
+    const burgerIcon = document.getElementById("burgerIcon")
 
     // Only update grid images if we are on the home page
     if (currentPage === "home") {
       e.preventDefault()
+      burgerIcon.classList.toggle("change")
+      setStatus(!status)
 
       switch (id) {
         case "logosPrint":
@@ -88,7 +91,7 @@ const Nav = ({ updateGrid, currentPage }) => {
         <div
           className={cn(
             styles.menu_container,
-            "bg-blue-800 p-8 md:p-0 fixed md:relative top-0 left-0 w-full bottom-0 z-10"
+            "bg-blue-800 px-12 py-12 md:p-0 fixed md:relative top-0 left-0 w-full bottom-0 z-30"
           )}
         >
           <ul className={cn(styles.menu, "flex justify-end m-0")}>
@@ -116,11 +119,7 @@ const Nav = ({ updateGrid, currentPage }) => {
           </ul>
         </div>
       </div>
-      <BurgerIcon
-        className="inline-block md:hidden"
-        status={status}
-        updateNav={updateNav}
-      />
+      <BurgerIcon className="inline-block md:hidden" updateNav={updateNav} />
     </nav>
   )
 }

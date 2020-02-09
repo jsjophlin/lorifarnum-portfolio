@@ -33,6 +33,13 @@
         @apply flex;
       }
     }
+    & li {
+      @apply mb-8;
+
+      @media (--breakpoint-md) {
+        @apply mb-0;
+      }
+    }
   }
 
   & a,
