@@ -47,7 +47,7 @@
     @apply text-xl;
 
     @media (--breakpoint-md) {
-      @apply text-lg;
+      @apply text-base;
     }
   }
 }

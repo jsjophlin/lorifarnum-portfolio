@@ -21,18 +21,6 @@ const ComponentList = {
   teaser: Teaser,
 }
 
-// const ComponentList = {
-//   feature: "Feature",
-//   general_page: "GeneralPage",
-//   grid: "Grid",
-//   home: "Home",
-//   image: "Image",
-//   logo: "Logo",
-//   page: "Page",
-//   project: "Project",
-//   teaser: "Teaser",
-// }
-
 const Components = type => {
   if (typeof ComponentList[type] === "undefined") {
     return ComponentNotFound
