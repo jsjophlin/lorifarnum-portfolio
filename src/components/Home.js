@@ -73,7 +73,7 @@ const Home = props => {
       <LinkedImage
         key={key}
         direction="column"
-        margin={"10px"}
+        margin={"0"}
         index={index}
         slug={grid.links[index]}
         photo={photo}
