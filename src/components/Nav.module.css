@@ -83,7 +83,11 @@
   }
   & a:hover,
   & button:hover {
-    @apply text-brandBlue;
+    @apply underline;
+
+    @media (--breakpoint-md) {
+      @apply text-brandBlue no-underline;
+    }
   }
 }
 

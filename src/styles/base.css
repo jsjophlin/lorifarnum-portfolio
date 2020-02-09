@@ -22,18 +22,33 @@ button,
 span {
   @apply font-sans;
 }
+h1,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+li,
+a,
+button,
+span {
+  @apply font-medium;
+}
 
 h1,
 .h1 {
-  @apply text-4xl leading-tight mb-4;
+  @apply leading-tight mb-4 font-semibold;
+  font-size: 24px;
 }
 h2,
 .h2 {
-  @apply text-3xl leading-tight mb-3;
+  @apply leading-tight mb-3 font-semibold;
+  font-size: 20px;
 }
 h3,
 .h3 {
-  @apply text-2xl leading-tight font-light mb-3;
+  @apply text-xl leading-tight font-light mb-3;
 }
 h4,
 .h4 {
@@ -64,6 +79,7 @@ th,
 li,
 button {
   @apply leading-tight;
+  font-size: 16px;
 }
 
 blockquote,
@@ -96,14 +112,14 @@ a {
 }
 
 @media (--breakpoint-sm) {
-  h1,
+  /* h1,
   .h1 {
     @apply text-7xl;
-  }
-  h2,
+  } */
+  /* h2,
   .h2 {
-    @apply text-4xl;
-  }
+    @apply text-2xl;
+  } */
   h3,
   .h3 {
     @apply text-3xl;
@@ -130,7 +146,7 @@ a {
   }
 }
 
-@media (--breakpoint-md) {
+/* @media (--breakpoint-md) {
   h1,
   .h1 {
     @apply text-8xl;
@@ -139,9 +155,9 @@ a {
   .h2 {
     @apply text-5xl;
   }
-}
+} */
 
-@media (--breakpoint-lg) {
+/* @media (--breakpoint-lg) {
   h2,
   .h2 {
     @apply text-6xl;
@@ -154,4 +170,4 @@ a {
   button {
     @apply text-lg;
   }
-}
+} */

@@ -25,6 +25,10 @@ const Layout = ({ children }) => {
         <html lang="en" />
         <title>{title}</title>
         <meta name="description" content={description} />
+        <link
+          href="https://fonts.googleapis.com/css?family=Montserrat:500,600&display=swap"
+          rel="stylesheet"
+        />
       </Helmet>
       <main className="mb-12">{children}</main>
       <Footer />

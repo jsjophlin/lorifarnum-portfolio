@@ -24,7 +24,7 @@ const Project = ({ blok, isTeaser, slug }) => {
             <div className="bg-actualWhite py-10">
               {!isTeaser && (
                 <div className="project-meta">
-                  <h1 className="h3 text-center text-brandBlue">{name}</h1>
+                  <h1 className="text-center text-brandBlue">{name}</h1>
                   {description && <h3>{description}</h3>}
                 </div>
               )}

@@ -56,7 +56,7 @@ module.exports = {
         twitterBlue: "#5cabff",
       },
       fontFamily: {
-        sans: ["Arial, sans-serif"],
+        sans: ["Montserrat, Arial, sans-serif"],
       },
     },
   },
