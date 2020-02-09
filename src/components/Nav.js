@@ -63,12 +63,7 @@ const Nav = ({ updateGrid, currentPage }) => {
         "flex justify-center md:justify-between items-center md:block"
       )}
     >
-      <div
-        className={cn(
-          styles.nav_inner,
-          "flex justify-between items-end my-8 relative"
-        )}
-      >
+      <div className="flex justify-between items-end my-8 relative">
         <figure>
           <Link
             onClick={handleLogoClick}
