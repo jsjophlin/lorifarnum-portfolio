@@ -6,7 +6,16 @@ import styles from "./LinkedImage.module.css"
 
 const cont = {}
 
-const LinkedImage = ({ index, photo, margin, direction, top, left, slug }) => {
+const LinkedImage = ({
+  alt,
+  index,
+  photo,
+  margin,
+  direction,
+  top,
+  left,
+  slug,
+}) => {
   if (direction === "column") {
     cont.left = left
     cont.top = top
@@ -28,7 +37,7 @@ const LinkedImage = ({ index, photo, margin, direction, top, left, slug }) => {
           style={{ margin, height: photo.height, width: photo.width, ...cont }}
         >
           <Link to={`/projects/${slug.slug}`}>
-            <img alt={photo.title} {...photo} />
+            <img alt={alt.alt} {...photo} />
           </Link>
         </figure>
       )}

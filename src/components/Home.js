@@ -18,6 +18,7 @@ const Home = props => {
   const projectsPrint = useProjectsPrint()
   const projectsWeb = useProjectsWeb()
   const [grid, setGrid] = useState(formatPhotos(projects))
+  const allPhotos = formatPhotos(projects)
   // Grab the user's choice from the previous page and save it, then clear local storage
   let currentImages = null
   if (typeof window !== "undefined") {
@@ -29,6 +30,7 @@ const Home = props => {
     const tempGrid = {
       photos: [],
       links: [],
+      alts: [],
     }
     // Holding a space at the beginning of the array for the logo carousel
     const dummyPhoto = {
@@ -38,6 +40,9 @@ const Home = props => {
     }
     const dummySlug = {
       slug: "/logos",
+    }
+    const dummyAlt = {
+      alt: "Logo carousel",
     }
 
     projects.forEach(({ node }) => {
@@ -60,11 +65,15 @@ const Home = props => {
       tempGrid.links.push({
         slug: slug,
       })
+      tempGrid.alts.push({
+        alt: content.name,
+      })
     })
 
     // Add the dummy objects to the beginning of the array
     tempGrid.photos.unshift(dummyPhoto)
     tempGrid.links.unshift(dummySlug)
+    tempGrid.alts.unshift(dummyAlt)
 
     return tempGrid
   }
@@ -81,6 +90,7 @@ const Home = props => {
         photo={photo}
         left={left}
         top={top}
+        alt={allPhotos.alts[index]}
       />
     ),
     [grid]
@@ -93,7 +103,7 @@ const Home = props => {
     } else if (type === "web") {
       setGrid(formatPhotos(projectsWeb))
     } else {
-      setGrid(formatPhotos(projects))
+      setGrid(allPhotos)
     }
   }
 
