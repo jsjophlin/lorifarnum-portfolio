@@ -8,6 +8,7 @@ import LinkedImage from "./LinkedImage"
 import useProjects from "./staticQueries/projects"
 import useProjectsPrint from "./staticQueries/projectsPrint"
 import useProjectsWeb from "./staticQueries/projectsWeb"
+import spacer from "../images/spacer.png"
 import "../styles/masonry.css"
 
 // React-photo-gallery: https://www.npmjs.com/package/react-photo-gallery
@@ -28,6 +29,14 @@ const Home = props => {
     const tempGrid = {
       photos: [],
       links: [],
+    }
+    const dummyPhoto = {
+      src: spacer,
+      width: 548,
+      height: 410,
+    }
+    const dummySlug = {
+      slug: "/logos",
     }
 
     projects.forEach(({ node }) => {
@@ -52,6 +61,9 @@ const Home = props => {
       })
     })
 
+    tempGrid.photos.unshift(dummyPhoto)
+    tempGrid.links.unshift(dummySlug)
+
     return tempGrid
   }
 
@@ -61,7 +73,7 @@ const Home = props => {
       <LinkedImage
         key={key}
         direction="column"
-        margin={"0"}
+        margin={"10px"}
         index={index}
         slug={grid.links[index]}
         photo={photo}
