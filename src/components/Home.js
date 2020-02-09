@@ -34,7 +34,6 @@ const Home = props => {
       const { slug } = node
       const content = JSON.parse(node.content)
       const { image, dimensions } = content
-      // TODO: Use Storyblok image filters to fetch appropriate thumbnail size
       const thumbnail = image[0].image
       const re = /.+?(?=x)/
       const width = parseInt(re.exec(dimensions)[0])

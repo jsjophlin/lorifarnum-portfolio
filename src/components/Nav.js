@@ -1,10 +1,12 @@
-import React from "react"
+import React, { useState } from "react"
 import cn from "classnames"
 import { Link } from "gatsby"
+import BurgerIcon from "../components/BurgerIcon"
 import logo from "../../static/img/logo.svg"
 import styles from "./Nav.module.css"
 
 const Nav = ({ updateGrid, currentPage }) => {
+  const [status, setStatus] = useState(false)
   const handleLogoClick = e => {
     // Only update grid images if we are on the home page
     if (currentPage === "home") {
@@ -49,43 +51,81 @@ const Nav = ({ updateGrid, currentPage }) => {
     }
   }
 
+  const updateNav = status => {
+    setStatus(!status)
+  }
+
   return (
-    <nav className={cn(styles.nav, "flex justify-between items-end my-8")}>
-      <figure>
-        <Link onClick={handleLogoClick} to={"/"} className="flex items-end">
-          <img className="w-16 h-auto" src={logo} alt="Lori Farnum logo" />
-          <span
-            className={cn(styles.logo_text, "h5 text-brandBlue block ml-2")}
+    <nav
+      className={cn(
+        styles.nav,
+        status ? styles.active : "",
+        "flex justify-center md:justify-between items-center md:block"
+      )}
+    >
+      <div
+        className={cn(
+          styles.nav_inner,
+          "flex justify-between items-end my-8 relative"
+        )}
+      >
+        <figure>
+          <Link
+            onClick={handleLogoClick}
+            to={"/"}
+            className="flex flex-col md:flex-row items-center md:items-end"
           >
-            Lori Farnum
-          </span>
-        </Link>
-      </figure>
-      <div>
-        <ul className={cn(styles.menu, "flex justify-end m-0")}>
-          <li className="mr-8">
-            <Link id="logosAll" onClick={handleMenuClick} to="/">
-              All
-            </Link>
-          </li>
-          <li className="mr-8">
-            <Link id="logosPrint" onClick={handleMenuClick} to="/">
-              Print
-            </Link>
-          </li>
-          <li className="mr-8">
-            <Link id="logosWeb" onClick={handleMenuClick} to="/">
-              Web
-            </Link>
-          </li>
-          <li className="mr-8">
-            <Link to="/logos">Logos</Link>
-          </li>
-          <li className="mr-4">
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
+            <img
+              className="w-16 md:w-12 h-auto mb-2 md:mb-0 flex-shrink-0"
+              src={logo}
+              alt="Lori Farnum logo"
+            />
+            <span
+              className={cn(
+                styles.logo_text,
+                "text-xl text-brandBlue block md:ml-2 flex-shrink-0 leading-none"
+              )}
+            >
+              Lori Farnum
+            </span>
+          </Link>
+        </figure>
+        <div
+          className={cn(
+            styles.menu_container,
+            "bg-blue-800 p-8 md:p-0 fixed md:relative top-0 left-0 w-full bottom-0 z-10"
+          )}
+        >
+          <ul className={cn(styles.menu, "flex justify-end m-0")}>
+            <li className="mr-8">
+              <Link id="logosAll" onClick={handleMenuClick} to="/">
+                All
+              </Link>
+            </li>
+            <li className="mr-8">
+              <Link id="logosPrint" onClick={handleMenuClick} to="/">
+                Print
+              </Link>
+            </li>
+            <li className="mr-8">
+              <Link id="logosWeb" onClick={handleMenuClick} to="/">
+                Web
+              </Link>
+            </li>
+            <li className="mr-8">
+              <Link to="/logos">Logos</Link>
+            </li>
+            <li className="mr-4">
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+        </div>
       </div>
+      <BurgerIcon
+        className="inline-block md:hidden"
+        status={status}
+        updateNav={updateNav}
+      />
     </nav>
   )
 }

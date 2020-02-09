@@ -13,27 +13,61 @@
   }
 }
 
+.nav_inner {
+}
+
+.menu_container {
+  @apply hidden;
+
+  @media (--breakpoint-md) {
+    @apply bg-transparent block;
+  }
+}
+.active {
+  @apply block;
+
+  & .menu_container {
+    @apply block;
+
+    & ul {
+      display: block;
+    }
+  }
+
+  & a,
+  & button {
+    @apply text-xl;
+  }
+}
+
 .menu li {
   @apply mb-0;
 
-  &:not(:last-child) {
-    @apply relative;
+  @media (--breakpoint-md) {
+    &:not(:last-child) {
+      @apply relative;
 
-    &::after {
-      @apply absolute bg-body;
-      content: "";
-      width: 1px;
-      height: 70%;
-      top: 50%;
-      right: -1rem;
-      transform: translateY(-50%);
+      &::after {
+        @apply absolute bg-body;
+        content: "";
+        width: 1px;
+        height: 70%;
+        top: 50%;
+        right: -1rem;
+        transform: translateY(-50%);
+      }
     }
   }
 }
 .menu {
   & a,
   & button {
+    @apply text-white;
     transition: color var(--timing-sm) linear;
+
+    @media (--breakpoint-md) {
+      @apply text-body;
+    }
   }
   & a:hover,
   & button:hover {
