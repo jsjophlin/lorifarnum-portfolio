@@ -1,6 +1,8 @@
 import React from "react"
+import cn from "classnames"
 import PropTypes from "prop-types"
 import Slider from "react-slick"
+import styles from "./Carousel.module.css"
 import "../styles/lib/slick.min.css"
 import "../styles/lib/slick-theme.min.css"
 import "../styles/carousel.css"
@@ -23,7 +25,7 @@ const Carousel = ({ items }) => {
       {items ? (
         items.map(({ src, alt, name }, index) => (
           <img
-            className="w-64 h-64"
+            className={cn(styles.image, "w-64")}
             key={`${name}-${index}`}
             src={src}
             alt={alt || name}

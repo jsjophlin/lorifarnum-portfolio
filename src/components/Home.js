@@ -13,7 +13,7 @@ import "../styles/masonry.css"
 
 // React-photo-gallery: https://www.npmjs.com/package/react-photo-gallery
 // Using this library to handle the tiling grid of images
-const Home = props => {
+const Home = ({ blok }) => {
   const projects = useProjects()
   const projectsPrint = useProjectsPrint()
   const projectsWeb = useProjectsWeb()
@@ -84,7 +84,7 @@ const Home = props => {
       <LinkedImage
         key={key}
         direction="column"
-        margin={"10"}
+        margin={"20"}
         index={index}
         slug={grid.links[index]}
         photo={photo}
@@ -93,7 +93,7 @@ const Home = props => {
         alt={allPhotos.alts[index]}
       />
     ),
-    [grid]
+    [grid, allPhotos]
   )
 
   // Callback to update the grid based on menu choice in Nav
@@ -113,7 +113,7 @@ const Home = props => {
   }
 
   return (
-    <SbEditable content={props.blok}>
+    <SbEditable content={blok}>
       <Helmet>
         <body className="home" />
       </Helmet>
