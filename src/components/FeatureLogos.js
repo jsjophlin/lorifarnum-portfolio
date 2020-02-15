@@ -1,5 +1,6 @@
 import React from "react"
 import useFeaturedLogos from "./staticQueries/featuredLogos"
+import { Link } from "gatsby"
 import Carousel from "./Carousel"
 
 const FeatureLogos = ({ style }) => {
@@ -15,9 +16,11 @@ const FeatureLogos = ({ style }) => {
   })
 
   return (
-    <div className="relative overflow-hidden" style={style}>
-      <Carousel items={logos} />
-    </div>
+    <Link to="/logos">
+      <span className="block relative overflow-hidden" style={style}>
+        <Carousel items={logos} />
+      </span>
+    </Link>
   )
 }
 

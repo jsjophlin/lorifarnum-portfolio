@@ -2,6 +2,10 @@
   &:hover img {
     transform: scale3d(1.05, 1.05, 1.05);
   }
+  & span {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+  }
   & img {
     transition: transform var(--timing-sm) cubic-bezier(0, 0, 0.2, 1),
       opacity var(--timing-sm) linear;

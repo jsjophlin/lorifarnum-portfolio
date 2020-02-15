@@ -1,11 +1,37 @@
 .logos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   column-gap: 1rem;
-}
-.logos figure {
-  max-width: calc(100% - 40px);
+  grid-template-columns: repeat(1, 1fr);
+
+  @media (--breakpoint-xs) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (--breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (--breakpoint-xl) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 .logos li {
   background-color: #f4f4f4;
+}
+.logos figure {
+  padding: 15%;
+  width: 100%;
+  height: auto;
+
+  @media (--breakpoint-xs) {
+    @apply p-4;
+    width: 40vw;
+    height: 40vw;
+  }
+  @media (--breakpoint-lg) {
+    width: calc(33.33vw - 1.5rem);
+    height: calc(33.33vw - 1.5rem);
+  }
+  @media (--breakpoint-xl) {
+    width: calc(25vw - 1.5rem);
+    height: calc(25vw - 1.5rem);
+  }
 }

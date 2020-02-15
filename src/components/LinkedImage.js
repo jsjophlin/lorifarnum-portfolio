@@ -10,7 +10,7 @@ const LinkedImage = ({
   alt,
   index,
   photo,
-  margin,
+  margin: marginAsString,
   direction,
   top,
   left,
@@ -20,25 +20,37 @@ const LinkedImage = ({
     cont.left = left
     cont.top = top
   }
+  const marginAsNumber = parseInt(marginAsString)
 
   return (
     <>
       {index === 0 ? (
         <FeatureLogos
-          style={{ margin, height: photo.height, width: photo.width, ...cont }}
+          style={{
+            margin: marginAsNumber,
+            height: photo.height,
+            width: photo.width,
+            ...cont,
+          }}
         />
       ) : (
         <figure
           className={cn(
             styles.linked_image,
-            "overflow-hidden",
             direction === "column" ? "absolute" : "relative"
           )}
-          style={{ margin, height: photo.height, width: photo.width, ...cont }}
+          style={{
+            margin: marginAsNumber,
+            height: photo.height,
+            width: photo.width,
+            ...cont,
+          }}
         >
-          <Link to={`/projects/${slug.slug}`}>
-            <img alt={alt.alt} {...photo} />
-          </Link>
+          <span className="block mx-auto overflow-hidden">
+            <Link to={`/projects/${slug.slug}`}>
+              <img alt={alt.alt} {...photo} />
+            </Link>
+          </span>
         </figure>
       )}
     </>

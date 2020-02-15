@@ -33,8 +33,12 @@ const LogosPage = () => {
                   className="flex justify-center items-center mb-4"
                 >
                   {image && (
-                    <figure className="w-full">
-                      <img src={image} alt={image_alt || title || name} />
+                    <figure className="w-full flex justify-center items-center">
+                      <img
+                        className="relative"
+                        src={image}
+                        alt={image_alt || title || name}
+                      />
                     </figure>
                   )}
                 </li>
