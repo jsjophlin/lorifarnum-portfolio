@@ -117,7 +117,7 @@ const Home = ({ blok }) => {
       <Helmet>
         <body className="home" />
       </Helmet>
-      <header>
+      <header className="mt-12 mb-6">
         <Nav updateGrid={updateGrid} currentPage="home" />
       </header>
       <Layout>

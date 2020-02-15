@@ -5,7 +5,8 @@
 main,
 nav,
 footer {
-  @apply mx-3;
+  margin-right: var(--space-base);
+  margin-left: var(--space-base);
 }
 
 h1,
@@ -44,7 +45,7 @@ h1,
 h2,
 .h2 {
   @apply leading-tight mb-3 font-semibold;
-  font-size: 20px;
+  font-size: var(--space-base);
 }
 h3,
 .h3 {
@@ -112,14 +113,6 @@ a {
 }
 
 @media (--breakpoint-sm) {
-  /* h1,
-  .h1 {
-    @apply text-7xl;
-  } */
-  /* h2,
-  .h2 {
-    @apply text-2xl;
-  } */
   h3,
   .h3 {
     @apply text-3xl;
@@ -145,29 +138,3 @@ a {
     @apply text-base;
   }
 }
-
-/* @media (--breakpoint-md) {
-  h1,
-  .h1 {
-    @apply text-8xl;
-  }
-  h2,
-  .h2 {
-    @apply text-5xl;
-  }
-} */
-
-/* @media (--breakpoint-lg) {
-  h2,
-  .h2 {
-    @apply text-6xl;
-  }
-  blockquote,
-  p,
-  th,
-  td,
-  li,
-  button {
-    @apply text-lg;
-  }
-} */

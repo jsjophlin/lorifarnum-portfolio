@@ -1,4 +1,8 @@
 /* Masonry grid styling */
+.react-photo-gallery--gallery {
+  transform: translateX(-20px);
+}
+
 .grid {
   margin: 0 auto;
 }
@@ -11,7 +15,7 @@
 .grid-item {
   width: 400px;
   height: calc(400px * 1.5472);
-  margin-bottom: 20px;
+  margin-bottom: var(--space-base);
   float: left;
   overflow: hidden;
 }

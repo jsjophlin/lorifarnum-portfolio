@@ -16,7 +16,9 @@ const Project = ({ blok, isTeaser, slug }) => {
 
   return (
     <SbEditable content={blok}>
-      <Nav currentPage="project" />
+      <header className="mt-12 mb-6">
+        <Nav currentPage="project" />
+      </header>
       <Layout>
         <div className="relative">
           <div className={cn(styles.content, "relative z-20")}>

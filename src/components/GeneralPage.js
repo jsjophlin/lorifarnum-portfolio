@@ -18,13 +18,11 @@ const GeneralPage = ({ blok }) => {
       <Helmet>
         <body className="general_page" />
       </Helmet>
-      <Nav currentPage="general_page" />
+      <header className="mt-12 mb-6">
+        <Nav currentPage="general_page" />
+      </header>
       <Layout>
-        {body && (
-          <div className="mx-4">
-            {ReactHtmlParser(Storyblok.richTextResolver.render(body))}
-          </div>
-        )}
+        {body && ReactHtmlParser(Storyblok.richTextResolver.render(body))}
       </Layout>
     </SbEditable>
   )

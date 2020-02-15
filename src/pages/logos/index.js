@@ -14,7 +14,9 @@ const LogosPage = () => {
       <Helmet>
         <body className="logos" />
       </Helmet>
-      <Nav currentPage="logos" />
+      <header className="mt-12 mb-6">
+        <Nav currentPage="logos" />
+      </header>
       <Layout>
         <SEO title="Logos by Lori Farnum" />
         {logos && (
@@ -28,10 +30,7 @@ const LogosPage = () => {
                 : null
 
               return (
-                <li
-                  key={_uid}
-                  className="flex justify-center items-center mb-4"
-                >
+                <li key={_uid} className="flex justify-center items-center">
                   {image && (
                     <figure className="w-full flex justify-center items-center">
                       <img
