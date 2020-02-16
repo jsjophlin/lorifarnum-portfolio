@@ -35,8 +35,8 @@ const GeneralPage = ({ blok, slug }) => {
               <h2 className="text-center">Contact me</h2>
               <form
                 className={cn(styles.form)}
-                name="contact"
-                method="POST"
+                method="post"
+                netlify-honeypot="bot-field"
                 data-netlify="true"
               >
                 <p>
@@ -59,6 +59,7 @@ const GeneralPage = ({ blok, slug }) => {
                     Submit
                   </button>
                 </p>
+                <input type="hidden" name="bot-field" />
               </form>
             </div>
           )}
