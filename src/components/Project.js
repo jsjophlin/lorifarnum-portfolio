@@ -11,12 +11,14 @@ import styles from "./Project.module.css"
 
 const Project = ({ blok, isTeaser, tags }) => {
   const projectBgImage = useProjectBgImage()
-  const { description, image, name } = blok
+  const { description, image, link, name } = blok
   const primaryImage = image ? (image.length === 1 ? image[0] : image[1]) : null
   const type = {
     isWeb: tags ? tags.includes("web") : null,
     isPrint: tags ? tags.includes("print") : null,
+    isLogo: tags ? tags.includes("logo") : null,
   }
+  const finalLink = link ? link.url || link.cached_url : null
 
   return (
     <SbEditable content={blok}>
@@ -31,15 +33,27 @@ const Project = ({ blok, isTeaser, tags }) => {
               {!isTeaser && (
                 <div className="project-meta">
                   <div className="titles flex flex-col">
-                    <h1 className="text-center text-brandBlue order-2">
-                      {name}
-                    </h1>
+                    {finalLink ? (
+                      <a
+                        className={cn(styles.link, "order-2")}
+                        href={finalLink}
+                      >
+                        <h1 className="text-center text-brandBlue">{name}</h1>
+                      </a>
+                    ) : (
+                      <h1 className="text-center text-brandBlue order-2">
+                        {name}
+                      </h1>
+                    )}
                     <h5 className="text-center text-brandBlue uppercase order-1 text-xs">
-                      {type.isWeb
-                        ? "Web design"
-                        : type.isPrint
-                        ? "Print design"
-                        : ""}
+                      <span>
+                        {type.isWeb
+                          ? "Web design"
+                          : type.isPrint
+                          ? "Print design"
+                          : ""}
+                      </span>
+                      {type.isLogo && <span> & Logo</span>}
                     </h5>
                   </div>
                   {description && <h3>{description}</h3>}
@@ -49,6 +63,7 @@ const Project = ({ blok, isTeaser, tags }) => {
                 React.createElement(Components(primaryImage.component), {
                   key: primaryImage._uid,
                   blok: primaryImage,
+                  slug: finalLink,
                 })}
             </div>
             <div className={cn(styles.hero_spacer_clear, "table")} />

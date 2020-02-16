@@ -14,3 +14,48 @@
       background-color var(--timing-sm) linear;
   }
 }
+
+.avatar_image {
+  @apply ml-auto;
+  max-width: 600px;
+}
+
+.blockquote_container {
+  &::before,
+  &::after {
+    @apply mx-auto bg-white hidden;
+    content: "";
+    height: 1px;
+    width: 25%;
+
+    @media (min-width: 500px) {
+      @apply block;
+    }
+  }
+
+  &::before {
+    @apply mb-1;
+  }
+
+  &::after {
+    @media (--breakpoint-xs) {
+      @apply mt-4;
+    }
+
+    @media (min-width: 500px) {
+      @apply mt-6;
+    }
+
+    @media (--breakpoint-sm) {
+      @apply mt-10;
+    }
+
+    @media (--breakpoint-md) {
+      @apply mt-16;
+    }
+  }
+
+  & blockquote {
+    max-width: 400px;
+  }
+}

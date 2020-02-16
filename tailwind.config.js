@@ -47,6 +47,9 @@ module.exports = {
       none: "none",
     },
     extend: {
+      maxWidth: {
+        "7xl": "82rem",
+      },
       colors: {
         white: "#ececec",
         actualWhite: "#ffffff",

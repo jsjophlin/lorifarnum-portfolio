@@ -1,6 +1,5 @@
 import React from "react"
 import SbEditable from "storyblok-react"
-import { Link } from "gatsby"
 
 const Image = ({ blok, slug }) => {
   const image = () => (
@@ -13,7 +12,7 @@ const Image = ({ blok, slug }) => {
   return (
     <SbEditable content={blok}>
       <div className="image">
-        {slug ? <Link to={slug}>{image()}</Link> : image()}
+        {slug ? <a href={slug}>{image()}</a> : image()}
       </div>
     </SbEditable>
   )

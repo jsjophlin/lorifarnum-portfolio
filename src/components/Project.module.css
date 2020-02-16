@@ -14,3 +14,12 @@
 .hero_spacer_clear {
   clear: both;
 }
+
+.link {
+  &:hover {
+    & h1 {
+      @apply text-blue-300;
+      transition: color var(--timing-sm) linear;
+    }
+  }
+}
