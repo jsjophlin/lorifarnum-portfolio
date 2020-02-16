@@ -11,6 +11,15 @@
   --info: #4e5154;
   --warning: #f6ca60;
   --danger: #d45353;
+  --gray-100: #f4f4f4;
+  --gray-100: #eeeeee;
+  --gray-100: #e0e0e0;
+  --gray-100: #bdbdbd;
+  --gray-100: #9e9e9e;
+  --gray-100: #757575;
+  --gray-100: #616161;
+  --gray-100: #424242;
+  --gray-100: #212121;
   --breakpoint-0: 0;
   --breakpoint-xs: 414px;
   --breakpoint-sm: 640px;

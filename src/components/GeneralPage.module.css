@@ -1,0 +1,16 @@
+.form {
+  & input,
+  & textarea {
+    @apply text-gray-700 bg-gray-100 border-gray-300 rounded-sm px-4 py-2 w-full;
+    border-width: 1px;
+  }
+
+  & textarea {
+    min-height: 125px;
+  }
+
+  & button {
+    transition: color var(--timing-sm) linear,
+      background-color var(--timing-sm) linear;
+  }
+}

@@ -1,6 +1,6 @@
 .logos_container {
   &::after {
-    @apply block absolute left-0 bottom-0 right-0 bg-gray z-10;
+    @apply block absolute left-0 bottom-0 right-0 bg-gray-100 z-10;
     content: "";
     margin: 10px 10px 0;
     top: 10px;

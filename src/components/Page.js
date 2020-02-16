@@ -1,7 +1,7 @@
 import React from "react"
 import Components from "./Components.js"
 
-const Page = ({ blok }) => {
+const Page = ({ blok, slug }) => {
   const core_page = blok.core_page ? blok.core_page[0] : null
 
   return (
@@ -11,6 +11,7 @@ const Page = ({ blok }) => {
           key: blok._uid,
           blok: core_page,
           seo: blok.seo,
+          slug: slug,
         })}
       {blok.body &&
         blok.body.map(blok =>

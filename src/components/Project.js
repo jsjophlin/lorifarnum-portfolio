@@ -20,7 +20,7 @@ const Project = ({ blok, isTeaser, tags }) => {
 
   return (
     <SbEditable content={blok}>
-      <header className="mt-12 mb-6">
+      <header className="mt-12 mb-10">
         <Nav currentPage="project" />
       </header>
       <Layout>
