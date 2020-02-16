@@ -9,10 +9,14 @@ import Nav from "./Nav"
 import useProjectBgImage from "../components/staticQueries/projectBgImage"
 import styles from "./Project.module.css"
 
-const Project = ({ blok, isTeaser, slug }) => {
+const Project = ({ blok, isTeaser, tags }) => {
   const projectBgImage = useProjectBgImage()
   const { description, image, name } = blok
   const primaryImage = image ? (image.length === 1 ? image[0] : image[1]) : null
+  const type = {
+    isWeb: tags ? tags.includes("web") : null,
+    isPrint: tags ? tags.includes("print") : null,
+  }
 
   return (
     <SbEditable content={blok}>
@@ -26,7 +30,18 @@ const Project = ({ blok, isTeaser, slug }) => {
             <div className="bg-actualWhite py-10">
               {!isTeaser && (
                 <div className="project-meta">
-                  <h1 className="text-center text-brandBlue">{name}</h1>
+                  <div className="titles flex flex-col">
+                    <h1 className="text-center text-brandBlue order-2">
+                      {name}
+                    </h1>
+                    <h5 className="text-center text-brandBlue uppercase order-1 text-xs">
+                      {type.isWeb
+                        ? "Web design"
+                        : type.isPrint
+                        ? "Print design"
+                        : ""}
+                    </h5>
+                  </div>
                   {description && <h3>{description}</h3>}
                 </div>
               )}

@@ -33,7 +33,7 @@ class StoryblokEntry extends React.Component {
           key: content._uid,
           blok: content,
           name: name,
-          full_slug: full_slug,
+          slug: full_slug,
           tags: tag_list,
         })}
       </div>
@@ -62,6 +62,7 @@ export const storyblokEntryQuery = graphql`
       is_startpage
       parent_id
       group_id
+      tag_list
     }
   }
 `
