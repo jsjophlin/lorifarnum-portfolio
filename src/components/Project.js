@@ -5,6 +5,7 @@ import SbEditable from "storyblok-react"
 import Img from "gatsby-image"
 import Components from "./Components.js"
 import Layout from "./Layout"
+import SEO from "./Seo"
 import Nav from "./Nav"
 import useProjectBgImage from "../components/staticQueries/projectBgImage"
 import styles from "./Project.module.css"
@@ -25,6 +26,7 @@ const Project = ({ blok, isTeaser, tags }) => {
       <header className="mt-12 mb-10">
         <Nav currentPage="project" />
       </header>
+      <SEO page="Projects" />
       <Layout>
         <div className="relative">
           <div className={cn(styles.content, "relative z-20")}>

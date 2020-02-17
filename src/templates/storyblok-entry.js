@@ -45,12 +45,6 @@ export default StoryblokEntry
 
 export const storyblokEntryQuery = graphql`
   query storyblokEntryQuery($uuid: String!) {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
     storyblokEntry(uuid: { eq: $uuid }) {
       id
       name

@@ -18,7 +18,7 @@ const LogosPage = () => {
         <Nav currentPage="logos" />
       </header>
       <Layout>
-        <SEO title="Logos by Lori Farnum" />
+        <SEO page="Logos" />
         {logos && (
           <ul className={styles.logos}>
             {logos.map(({ node }) => {
