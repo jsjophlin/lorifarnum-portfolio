@@ -1,5 +1,7 @@
 /* Masonry grid styling */
+
 .react-photo-gallery--gallery {
+  /* Hack to compensate for margins shifting grid over */
   transform: translateX(-20px);
 }
 
