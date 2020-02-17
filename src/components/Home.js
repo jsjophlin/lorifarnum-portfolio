@@ -28,13 +28,22 @@ const Home = ({ blok }) => {
     localStorage.clear()
   }
 
+  const mq = useMedia(
+    // Media query
+    ["(min-width: 769px)"],
+    // Screen breakpoint
+    [769],
+    // Default screen size (smallest mobile)
+    0
+  )
+
   // Using react-photo-gallery's example here: https://codesandbox.io/s/o7o241q09
   const imageRenderer = useCallback(
     ({ index, left, top, key, photo }) => (
       <LinkedImage
         key={key}
         direction="column"
-        margin={"20"}
+        margin={mq === 769 ? "20" : "10"}
         index={index}
         slug={grid.links[index]}
         photo={photo}

@@ -35,7 +35,7 @@
   --text-base: 1rem;
   --text-lg: 1.125rem;
   --text-xl: 1.25rem;
-  --space-base: 20px;
+  --space-base: 10px;
   --space-xs: 0.25rem;
   --space-sm: 1rem;
   --space-md: 1.75rem;
@@ -46,4 +46,10 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospac;
+}
+
+@media (--breakpoint-md) {
+  :root {
+    --space-base: 20px;
+  }
 }
