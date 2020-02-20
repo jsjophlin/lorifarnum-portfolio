@@ -1,3 +1,15 @@
 .image {
-  max-height: 12vw;
+  padding: 5vw;
+
+  @media (--breakpoint-xs) {
+    padding: 1.5rem;
+  }
+
+  @media (--breakpoint-sm) {
+    padding: 2rem;
+  }
+
+  @media (--breakpoint-md) {
+    padding: 3rem;
+  }
 }

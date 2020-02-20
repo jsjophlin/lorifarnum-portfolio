@@ -52,7 +52,7 @@ const Home = ({ blok }) => {
         alt={allPhotos.alts[index]}
       />
     ),
-    [grid, allPhotos]
+    [grid, allPhotos, mq]
   )
 
   // Callback to update the grid based on menu choice in Nav
